@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+{% load bootstrap4 %}
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="navbar-fixed">
+    <nav>
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#home" class="brand-logo">E-Shop</a>
+                <a href="#" data-activates="mobile-nav" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+
+                        <a href="">Home</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li>
+                            <a href="">Log Out</a>
+                        </li>
+
+                    {% else %}
+                        <li><a href="">Login</a></li>
+                        <li><a href="">Signup</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+{% block content %}
+{% endblock content %}
+
+
+</body>
+</html>
